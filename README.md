@@ -1,2 +1,83 @@
-# home.uncensorednames
-Home of UncensoredNames/ , Handshake root-level domain
+<html>
+<head>
+    <title>home.uncensorednames/ | Rainbow Roots of Domain Names</title>
+    <style>
+        body {
+            background-color: #127005;
+            overflow: auto;
+        }
+
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+Home of uncensorednames/ , Handshake root-level domain!
+<body>
+<canvas id="roots"></canvas>
+
+<script>
+    const canvas = document.getElementById('roots');
+    const context = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const maxDepth = 9;
+    const branchesPerNode = 3;
+    const branchAngle = Math.PI / 6;
+    const initialLength = 177;
+    const lengthFactor = 1;
+
+    const domainNames = ["inneri/", "hnsroot/", "handshakenft/", "hnsdemo/", "rootsoftheinternet/", "i1web/", "innerinetwork/", "uncensorednames/", "aidrip/", "therootzone/"];
+
+    function generateRoots(depth, angle, length, x, y) {
+        if (depth === 0) {
+            return;
+        }
+
+        const numBranches = Math.floor(Math.random() * branchesPerNode) + 1;
+        const branchAngles = [];
+        for (let i = 0; i < numBranches; i++) {
+            branchAngles.push(angle + Math.random() * branchAngle * 2 - branchAngle);
+        }
+
+        const hue = Math.random() * 360;
+        const saturation = Math.random() * 30 + 70;
+        const lightness = Math.random() * 40 + 50;
+        context.strokeStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+
+        for (let i = 0; i < numBranches; i++) {
+            const newLength = length * lengthFactor;
+            const newX = x + newLength * Math.sin(branchAngles[i]);
+            const newY = y - newLength * Math.cos(branchAngles[i]);
+            context.beginPath();
+            context.moveTo(x, y);
+            context.lineTo(newX, newY);
+            context.stroke();
+
+            const domainName = domainNames[Math.floor(Math.random() * domainNames.length)];
+            context.fillStyle = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+            context.font = `${Math.floor(length / 3)}px Arial`;
+            context.fillText(domainName, newX - context.measureText(domainName).width / 2, newY);
+
+            generateRoots(depth - 1, branchAngles[i], newLength, newX, newY);
+        }
+    }
+
+    generateRoots(maxDepth, -Math.PI / 2, initialLength, canvas.width / 2, canvas.height);
+
+</script>
+
+<p>Handshake site on .i1web TLD at <a href="https://reg.uncensorednames.com">Reg.UncensoredNames/</a></p>
+<p>See post about these rainbow domain name roots at <a href="https://innerinetcompany.com/2023/03/26/text-to-code-cyber-matrix-roots/">innerinetcompany.com/</a></p>
+</body>
+
+[Reg.UncensoredNames/](http://reg.uncensorednames.hns.to/) 
+<br>
+[Reg.UncensoredNames.com](https://reg.uncensorednames.com/)
+</html>
