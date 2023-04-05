@@ -73,11 +73,11 @@ Home of uncensorednames/ , Handshake root-level domain!
 
 </script>
 
-<p>Handshake site on .i1web TLD at <a href="https://reg.uncensorednames.com">Reg.UncensoredNames/</a></p>
+<p> <a href="https://reg.uncensorednames.com">Reg.UncensoredNames/</a></p>
 <p>See post about these rainbow domain name roots at <a href="https://innerinetcompany.com/2023/03/26/text-to-code-cyber-matrix-roots/">innerinetcompany.com/</a></p>
 </body>
 
-[Reg.UncensoredNames/](http://reg.uncensorednames.hns.to/) 
+    <li><a href="http://reg.uncensorednames.hns.to/">reg.uncensorednames/</a></li>
 <br>
-[Reg.UncensoredNames.com](https://reg.uncensorednames.com/)
+    <li><a href="https://reg.uncensorednames.com/">reg.uncensorednames.com/</a></li>
 </html>
